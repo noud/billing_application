@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/jquery1.9.1.min.js')}}"></script>
     <script src="{{ asset('js/sweetalert.min.js')}}"></script>
     <script src="{{ asset('js/boxicons.js')}}"></script>
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 
     <title>Sri Hari Traders</title>
     <style>
@@ -18,6 +20,7 @@
 
         }
         .dev{
+            position: fixed;
             height: 100vh;
             width: 10vh;
             background-color:white;

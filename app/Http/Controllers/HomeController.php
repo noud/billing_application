@@ -32,7 +32,8 @@ class HomeController extends Controller
         return view('stocks')->with(array('products'=>$Prouducts));
     }
     public function customer(){
-        return view('customer');
+        $customers =DB::select("select * from customers");
+        return view('customer')->with(array('customers'=>$customers));
     }
     public function bill(){
         return view('bill');
@@ -71,5 +72,37 @@ class HomeController extends Controller
     {
         $id = $_POST['id'];
         DB::select("delete from products Where ID=$id");
+    }
+
+    // customer
+
+    public function add_customer(){
+        $customer_name = $_POST['customer_name'];
+        $contact = $_POST['contact'];
+        $area = $_POST['area'];
+
+        DB::select("insert into customers (name,contact,area) values ('$customer_name','$contact','$area')");
+    }
+
+    public function editcustomer()
+    {
+        $id = $_GET['id'];
+        $customer_details=DB::select("select * from customers Where ID=$id");
+        return $customer_details;
+    }
+
+    public function updatecustomer()
+    {
+        $id = $_POST['id'];
+        $name = $_POST['name'];
+        $contact = $_POST['contact'];
+        $area = $_POST['area'];
+        DB::select("update customers set name = '$name',contact='$contact',area='$area' where ID=$id");
+    }
+
+    public function deletecustomer()
+    {
+        $id = $_POST['id'];
+        DB::select("delete from customers Where ID=$id");
     }
 }

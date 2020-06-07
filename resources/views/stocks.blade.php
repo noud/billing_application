@@ -1,6 +1,10 @@
 @extends('layouts.base')
 @section('content')
+
+<link href="{{ asset('css/datatable.css') }}" rel="stylesheet">
 <script src="{{ asset('js/jquery1.9.1.min.js')}}"></script>
+<script src="{{ asset('js/datatable.min.js')}}"></script>
+
 <style>
     .form-group{
         margin-bottom: 0;
@@ -37,10 +41,7 @@
 <div class="stock-table">
 <div class="card">
     <div class="card-header">
-        <div class="d-flex justify-content-between align-items-center">
-            <div class="form-group">
-                <input type="text" class="form-control" id="search" placeholder="Product Name">
-              </div>
+        <div class="d-flex justify-content-end align-items-center">
               <div>
                 <button type="button" class="btn btn-primary"  data-toggle="modal" data-target=".product_add_modal">Add Product</button>
             </div>
@@ -48,7 +49,7 @@
     </div>
 
     <div class="card-body">
-        <table class="table table-bordered text-center">
+        <table class="table table-bordered text-center table-sm" id="Product_table">
             <thead>
               <tr>
                 <th scope="col">S.no</th>
@@ -203,6 +204,9 @@
   </div>
 
   <script>
+      $(document).ready( function () {
+    $('#Product_table').DataTable();
+} );
 
 
 $.ajaxSetup({
@@ -323,8 +327,6 @@ location.reload();
 })
 }
 });
-
-
 
     </script>
 @endsection
