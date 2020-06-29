@@ -1,3 +1,18 @@
+Sample PDF
+
+![alt text](https://github.com/Dhamoderrick/billing_application/blob/master/public/Screenshots/pdf.JPG)
+
+1.Dashboard
+![alt text](https://github.com/Dhamoderrick/billing_application/blob/master/public/Screenshots/home.JPG)
+
+2.Stocks
+![alt text](https://github.com/Dhamoderrick/billing_application/blob/master/public/Screenshots/stocks.JPG)
+
+3.Customer
+![alt text](https://github.com/Dhamoderrick/billing_application/blob/master/public/Screenshots/customer.JPG)
+
+4.Bill Page
+![alt text](https://github.com/Dhamoderrick/billing_application/blob/master/public/Screenshots/bill.JPG)
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
