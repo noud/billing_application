@@ -136,7 +136,7 @@
                     <div class="col-6">
                         <select name="" id="Customer_area" class="form-control">
                             <option value="">Select Area</option>
-                            @foreach ($customers as $item)
+                            @foreach ($area as $item)
                         <option value="{{$item->Area_name}}">{{$item->Area_name}}</option>
                             @endforeach
                         </select>

@@ -29,6 +29,8 @@ Route::get('/home', 'HomeController@index')->middleware('auth');
 Route::any('/stocks','HomeController@stocks');
 Route::get('/customer','HomeController@customer');
 Route::get('/bill','HomeController@bill');
+Route::get('/company','HomeController@company');
+Route::get('/settings','HomeController@settings');
 Route::get('/area','HomeController@area');
 Route::get('/allbill','HomeController@allbill');
 
@@ -50,5 +52,17 @@ Route::get('add/invoice','HomeController@addinvoice');
 
 Route::post('/add/area','HomeController@add_area');
 
+// bill edit
 
+Route::get('/edit/bill/{item}','HomeController@editbill');
+// Route::get('/print/{invo_detai}','HomeController@print');
+
+
+// Route::get('update/invoice','HomeController@updateinvoice');
+
+// graph
+Route::get('/graph','Homecontroller@graph');
+Route::get('/activity_graph','Homecontroller@activity_graph');
+Route::get('/tax_graph','Homecontroller@tax_graph');
+Route::get('/add/company','Homecontroller@add_company');
 

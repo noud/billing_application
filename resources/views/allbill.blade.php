@@ -44,9 +44,10 @@
               <td>{{$item->Date}}</td>
               <td>{{$item->Amount}}</td>
               <td>
-                  <button type="button" class="btn btn-info btn-sm"><box-icon name='pencil'></box-icon></button>
-                  <button type="button" class="btn btn-warning btn-sm"><box-icon name='printer' ></box-icon></button>
-                  <button type="button" class="btn btn-danger btn-sm"><box-icon name='trash' ></box-icon></button>
+                  <a href="{{ url('/edit/bill',$item->Invoice_ID) }}">
+                  <button type="button" data-id="{{$item->Invoice_ID}}" class="btn btn-warning btn-sm"><box-icon name='printer' ></box-icon></button>
+                </a>
+                  <button type="button" data-id="{{$item->Invoice_ID}}" class="btn btn-danger btn-sm"><box-icon name='trash' ></box-icon></button>
                 </td>
               </tr>
               @endforeach

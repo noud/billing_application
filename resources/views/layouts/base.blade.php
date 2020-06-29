@@ -12,7 +12,7 @@
     <script src="{{ asset('js/boxicons.js')}}"></script>
 
 
-    <title>Sri Hari Traders</title>
+    <title class="d-print-none"></title>
     <style>
         body{
             background-color: #f4f7fc;
@@ -31,7 +31,7 @@ box-shadow: 10px 10px 5px -4px rgb(226, 226, 226);
             display: flex;
         }
         .ico-list{
-            height: 35vh;
+            height: 46vh;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -56,21 +56,27 @@ box-shadow: 10px 10px 5px -4px rgb(226, 226, 226);
 <body>
 
     <div class="wrapper">
-        <div class="mcol-1">
+        <div class="mcol-1 d-print-none">
     <div class="dev">
         <ul class="nav flex-column ico-list">
             <li class="nav-item">
-            <a class="nav-link active" href="/home"><img src="{{asset('images/dashboard-solid-24.png')}}" alt="" srcset=""></a>
+            <a class="nav-link active" href="/home"><img src="{{url('images/dashboard-solid-24.png')}}" alt="" srcset=""></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/stocks"><img src="{{asset('images/cube-solid-24.png')}}" alt="" srcset=""></a>
+              <a class="nav-link" href="/stocks"><img src="{{url('images/component-solid-24.png')}}" alt="" srcset=""></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/customer"><img src="{{asset('images/user-solid-24.png')}}" alt="" srcset=""></a>
+              <a class="nav-link" href="/customer"><img src="{{url('images/user-solid-24.png')}}" alt="" srcset=""></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/bill"><img src="{{asset('images/receipt-solid-24.png')}}" alt="" srcset=""></a>
+              <a class="nav-link" href="/bill"><img src="{{url('images/receipt-solid-24.png')}}" alt="" srcset=""></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/company"><img src="{{url('images/home-regular-24.png')}}" alt="" srcset=""></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/settings"><img src="{{url('images/cog-solid-24.png')}}" alt="" srcset=""></a>
+              </li>
         </ul>
         <ul class="navbar-nav ml-auto">
             <!-- Authentication Links -->
