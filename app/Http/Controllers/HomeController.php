@@ -7,6 +7,7 @@ use LaravelDaily\Invoices\Classes\Party;
 use LaravelDaily\Invoices\Classes\InvoiceItem;
 use Illuminate\Http\Request;
 use App;
+use App\Company;
 
 use PDF;
 use DB;
@@ -35,7 +36,12 @@ class HomeController extends Controller
         return view('home')->with(array('recent'=>$recent));
     }
     public function company(){
-        return view('company');
+        $company = Company::first();
+        if ($company) {
+            return view('company', ['company' => $company->toArray()]);
+        } else {            
+            return view('company');
+        }
     }
     public function settings(){
         return view('setting');
@@ -164,6 +170,7 @@ class HomeController extends Controller
 
         $invoice_details = DB::select("insert into invoice_detail (Customer_name,Area,Amount,Tax_amount,Date) values ('$customer_name','$customer_area','$sub_total','$tax_total','$date')");
         $id = DB::getPdo()->lastInsertId();
+        DB::select("update invoice_detail set Invoice_ID = '$id' where id = '$id';");
         $num_of_product = count($count);
                 for ($i=0; $i <$num_of_product ; $i++) {
                 $rem_qty = $available_qty[$i] - $product_qty[$i];
@@ -220,7 +227,12 @@ class HomeController extends Controller
         $city = $_GET['city'];
         $state = $_GET['state'];
         $pin = $_GET['pin'];
-        DB::select("insert into company (company_name,tin,address,mobile,phone,city,state,pin) values('$company_name','$tin','$address','$mobile','$phone','$city','$state','$pin')");
+        $count = Company::count();    
+        if (0 === $count) {
+            DB::select("insert into company (company_name,tin,address,mobile,phone,city,state,pin) values('$company_name','$tin','$address','$mobile','$phone','$city','$state','$pin')");
+        } else {
+            DB::select("update company set company_name='$company_name',tin='$tin',address='$address',mobile='$mobile',phone='$phone',city='$city',state='$state',pin='$pin'");
+        }
     }
 
 
