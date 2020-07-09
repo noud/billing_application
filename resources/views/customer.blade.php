@@ -137,7 +137,7 @@
                         <select name="" id="Customer_area" class="form-control">
                             <option value="">Select Area</option>
                             @foreach ($area as $item)
-                        <option value="{{$item->Area_name}}">{{$item->Area_name}}</option>
+                        <option value="{{$item->area_name}}">{{$item->area_name}}</option>
                             @endforeach
                         </select>
                       {{-- <input type="text" class="form-control" id="Customer_area" placeholder="Area"> --}}
@@ -182,7 +182,7 @@ $(document).ready( function () {
             data:{'customer_name' : customer_name,'contact':contact,'area':area},
             success:function(res)
             {
-                swal("Success!", "New Product Added!", "success").then(function(){
+                swal("Success!", "New Customer Added!", "success").then(function(){
                                         location.reload();
                     }
                     );

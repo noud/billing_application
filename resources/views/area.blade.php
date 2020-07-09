@@ -40,7 +40,7 @@
                 <?php $i++;?>
               <tr>
               <th scope="row">{{$i}}</th>
-              <td>{{$item->Area_name}}</td>
+              <td>{{$item->area_name}}</td>
                 <td>Otto</td>
                 <td>
                     <button type="button" data-id="{{$item->area_id}}"  data-toggle="modal" data-target=".edit_modal" class="btn btn-info btn-sm Edit_product"><box-icon name='pencil'></box-icon></button>
