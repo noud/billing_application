@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Auth::routes([
-    'register' =>false
+    'register' => false
 ]);
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -61,8 +61,8 @@ Route::get('/edit/bill/{item}','HomeController@editbill');
 // Route::get('update/invoice','HomeController@updateinvoice');
 
 // graph
-Route::get('/graph','Homecontroller@graph');
-Route::get('/activity_graph','Homecontroller@activity_graph');
-Route::get('/tax_graph','Homecontroller@tax_graph');
-Route::get('/add/company','Homecontroller@add_company');
+Route::get('/graph','HomeController@graph');
+Route::get('/activity_graph','HomeController@activity_graph');
+Route::get('/tax_graph','HomeController@tax_graph');
+Route::get('/add/company','HomeController@add_company');
 
