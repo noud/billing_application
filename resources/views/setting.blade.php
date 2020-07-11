@@ -1,4 +1,4 @@
 @extends('layouts.base')
 @section('content')
-seings
+settings
 @endsection

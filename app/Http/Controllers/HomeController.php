@@ -47,8 +47,9 @@ class HomeController extends Controller
         return view('setting');
     }
     public function stocks(){
+        $categories = DB::select("select * from category");
         $Prouducts = DB::select("select * from products");
-        return view('stocks')->with(array('products'=>$Prouducts));
+        return view('stocks')->with(array('products'=>$Prouducts, 'categories' => $categories));
     }
     public function customer(){
 
@@ -64,6 +65,10 @@ class HomeController extends Controller
     public function area(){
         $area = DB::select("select * from area");
       return view('area')->with(array('area'=>$area));
+    }
+    public function category(){
+        $category = DB::select("select * from category");
+      return view('category')->with(array('category'=>$category));
     }
     public function allbill(){
 
@@ -190,6 +195,46 @@ class HomeController extends Controller
         $area_name = $_POST['area_name'];
 
         DB::select("insert into area (Area_name) values ('$area_name')");
+    }
+    public function editarea()
+    {
+        $id = $_GET['id'];
+        $area_details=DB::select("select * from area Where area_id=$id");
+        return $area_details;
+    }
+    public function updatearea()
+    {
+        $id = $_POST['id'];
+        $name = $_POST['name'];
+        DB::select("update area set area_name = '$name' where area_id=$id");
+    }
+    public function deletearea()
+    {
+        $id = $_POST['id'];
+        DB::select("delete from area Where area_id=$id");
+    }
+
+    public function add_category(){
+        $category_name = $_POST['category_name'];
+
+        DB::select("insert into category (category_name) values ('$category_name')");
+    }
+    public function editcategory()
+    {
+        $id = $_GET['id'];
+        $category_details=DB::select("select * from category Where category_id=$id");
+        return $category_details;
+    }
+    public function updatecategory()
+    {
+        $id = $_POST['id'];
+        $name = $_POST['name'];
+        DB::select("update category set category_name = '$name' where category_id=$id");
+    }
+    public function deletecategory()
+    {
+        $id = $_POST['id'];
+        DB::select("delete from category Where category_id=$id");
     }
 
     public function editbill(Request $request){

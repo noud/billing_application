@@ -32,6 +32,7 @@ Route::get('/bill','HomeController@bill');
 Route::get('/company','HomeController@company');
 Route::get('/settings','HomeController@settings');
 Route::get('/area','HomeController@area');
+Route::get('/category','HomeController@category');
 Route::get('/allbill','HomeController@allbill');
 
 // product route
@@ -51,6 +52,14 @@ Route::post('product/find','HomeController@findproduct');
 Route::get('add/invoice','HomeController@addinvoice');
 
 Route::post('/add/area','HomeController@add_area');
+Route::get('area/edit','HomeController@editarea');
+Route::post('area/update','HomeController@updatearea');
+Route::post('area/delete','HomeController@deletearea');
+
+Route::post('/add/category','HomeController@add_category');
+Route::get('category/edit','HomeController@editcategory');
+Route::post('category/update','HomeController@updatecategory');
+Route::post('category/delete','HomeController@deletecategory');
 
 // bill edit
 

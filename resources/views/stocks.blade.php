@@ -20,20 +20,14 @@
 </style>
 <div class="card">
     <div class="card-body">
-        {{-- <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Detergent Cakes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Washing Powder</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="#">Disabled</a>
-            </li>
-          </ul> --}}
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Stocks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/category">Category</a>
+        </li>
+      </ul>
     </div>
 </div>
 
@@ -112,8 +106,9 @@
                               <div class="col">
                                 <select class="form-control" id="Edit_Product_category" aria-placeholder="Category" required>
                                     <option value="">Select</option>
-                                    <option value="Detergent Cake">Detergent Cake</option>
-                                    <option value="Washing Powder">washing Powder</option>
+                                    @foreach ($categories as $category)
+                                      <option value="{{ $category->category_name }}">{{ $category->category_name }}</option>
+                                    @endforeach
                                   </select>
                               </div>
                             </div>
@@ -186,8 +181,9 @@
                   <div class="col">
                     <select class="form-control" id="Product_category" aria-placeholder="Category" required>
                         <option value="">Select Category</option>
-                        <option value="Detergent Cake">Detergent Cake</option>
-                        <option value="Washing Powder">washing Powder</option>
+                        @foreach ($categories as $category)
+                          <option value="{{ $category->category_name }}">{{ $category->category_name }}</option>
+                        @endforeach
                       </select>
                   </div>
                 </div>
